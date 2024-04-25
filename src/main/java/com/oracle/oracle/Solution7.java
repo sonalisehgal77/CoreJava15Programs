@@ -18,7 +18,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class Solution7 {
 
     static class SinglyLinkedListNode {
         public int data;
