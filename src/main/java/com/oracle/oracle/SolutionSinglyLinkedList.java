@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 import java.util.function.Consumer;
 
-public class Solution8 {
+public class SolutionSinglyLinkedList {
 
     static class SinglyLinkedListNode {
         public int data;

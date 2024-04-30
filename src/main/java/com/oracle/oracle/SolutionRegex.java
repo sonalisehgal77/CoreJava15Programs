@@ -1,5 +1,7 @@
 package com.oracle.oracle;
 
+
+
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -8,7 +10,15 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution11 {
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class SolutionRegex {
 
     static class SinglyLinkedListNode {
         public int data;
@@ -54,37 +64,25 @@ public class Solution11 {
         }
     }
 
-    // Complete the hasCycle function below.
 
-    /*
-     * For your reference:
-     *
-     * SinglyLinkedListNode {
-     *     int data;
-     *     SinglyLinkedListNode next;
-     * }
-     *
-     */
     static boolean hasCycle(SinglyLinkedListNode head) {
-        SinglyLinkedListNode fast = head;
-        SinglyLinkedListNode slow = head;
+        SinglyLinkedListNode node;
+        Set set = new TreeSet<>();
+          while(head.next != null){
+             set.add(head.data);
+              //node = head.next;
+          }
 
-        while (head.next!= null){
-            int data = fast.next.next.data;
-            int dataOne = slow.next.data;
-            if (data == dataOne){
-                return true;
-            } else if (data != dataOne ){
-                continue;
-            } else {
-
-            }
-
-
+       // {(x, y) such that x.equals(y)}
+        if (set.contains(false)){
+            return false;
+        } else {
+            return true;
         }
 
-        return false;
 
+
+        //return false;
     }
 
     private static final Scanner scanner = new Scanner(System.in);

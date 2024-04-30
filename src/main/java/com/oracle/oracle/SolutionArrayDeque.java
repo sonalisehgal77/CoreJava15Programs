@@ -2,9 +2,8 @@ package com.oracle.oracle;
 
 import java.io.*;
 import java.util.*;
-///Need More Practice
-//TODO:
-public class Solution5 {
+
+public class SolutionArrayDeque {
 
     static int[] occurrences = new int[10000000];
 

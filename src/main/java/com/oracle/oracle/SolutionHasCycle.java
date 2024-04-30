@@ -1,7 +1,5 @@
 package com.oracle.oracle;
 
-
-
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -10,15 +8,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
-
-public class Solution7 {
+public class SolutionHasCycle {
 
     static class SinglyLinkedListNode {
         public int data;
@@ -76,23 +66,24 @@ public class Solution7 {
      *
      */
     static boolean hasCycle(SinglyLinkedListNode head) {
-        SinglyLinkedListNode node;
-        Set set = new TreeSet<>();
-          while(head.next != null){
-             set.add(head.data);
-              //node = head.next;
-          }
+        SinglyLinkedListNode fast = head;
+        SinglyLinkedListNode slow = head;
 
-       // {(x, y) such that x.equals(y)}
-        if (set.contains(false)){
-            return false;
-        } else {
+        if (head == null) {
             return true;
         }
 
+        while ((fast != null) && (fast.next != null)) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                return true;
+            }
 
 
-        //return false;
+        }
+        return false;
+
     }
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -127,7 +118,7 @@ public class Solution7 {
                     extra = temp;
                 }
 
-                if (i != llistCount-1) {
+                if (i != llistCount - 1) {
                     temp = temp.next;
                 }
             }

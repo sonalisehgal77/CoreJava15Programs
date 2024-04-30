@@ -8,7 +8,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution13 {
+public class SolutionSinglyLinkedListCode {
 
     static class SinglyLinkedListNode {
         public int data;
@@ -69,19 +69,20 @@ public class Solution13 {
         SinglyLinkedListNode fast = head;
         SinglyLinkedListNode slow = head;
 
-        if (head == null) {
-            return true;
-        }
-
-        while ((fast != null) && (fast.next != null)) {
-            fast = fast.next.next;
-            slow = slow.next;
-            if (fast == slow) {
+        while (head.next!= null){
+            int data = fast.next.next.data;
+            int dataOne = slow.next.data;
+            if (data == dataOne){
                 return true;
+            } else if (data != dataOne ){
+                continue;
+            } else {
+
             }
 
 
         }
+
         return false;
 
     }
@@ -118,7 +119,7 @@ public class Solution13 {
                     extra = temp;
                 }
 
-                if (i != llistCount - 1) {
+                if (i != llistCount-1) {
                     temp = temp.next;
                 }
             }
